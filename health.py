@@ -129,12 +129,13 @@ symptom_list = [
 
 for symptom, label in symptom_list:
 
-    symptoms[symptom] = st.selectbox(
-        label,
-        options=[0, 1],
-        format_func=lambda x: "No (0)" if x == 0 else "Yes (1)",
-        key=symptom
-    )
+   symptoms[symptom] = st.radio(
+    label,
+    options=[0, 1],
+    format_func=lambda x: "No" if x == 0 else "Yes",
+    horizontal=True,
+    key=symptom
+)
 
 # AI DISEASE PREDICTION
 
